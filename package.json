@@ -1,5 +1,5 @@
 {
-  "name": "wing-bot",
+  "name": "rizz-bot",
   "version": "1.0.0",
   "description": "A telegram bot that acts as your wingman",
   "main": "src/main.ts",
@@ -12,7 +12,8 @@
     "telegram",
     "bot",
     "pickup lines",
-    "wingman"
+    "wingman",
+    "rizzler"
   ],
   "type": "module",
   "bin": {
@@ -20,14 +21,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anupkrbid/wing-bot.git"
+    "url": "git+https://github.com/anupkrbid/rizz-bot.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/anupkrbid/wing-bot/issues"
+    "url": "https://github.com/anupkrbid/rizz-bot/issues"
   },
-  "homepage": "https://github.com/anupkrbid/wing-bot#readme",
+  "homepage": "https://github.com/anupkrbid/rizz-bot#readme",
   "dependencies": {
     "dotenv": "^16.4.7",
     "telegraf": "^4.16.3",
