@@ -1,0 +1,40 @@
+{
+  "name": "wing-bot",
+  "version": "1.0.0",
+  "description": "A telegram bot that acts as your wingman",
+  "main": "src/main.ts",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "build": "tsc",
+    "start": "tsc src/main.ts"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "pickup lines",
+    "wingman"
+  ],
+  "type": "module",
+  "bin": {
+    "yourfile": "./dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anupkrbid/wing-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anupkrbid/wing-bot/issues"
+  },
+  "homepage": "https://github.com/anupkrbid/wing-bot#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "telegraf": "^4.16.3",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3"
+  }
+}
