@@ -25,11 +25,6 @@ bot.start((ctx) => {
   );
 });
 
-// Bot handle text
-bot.on("text", (ctx) => {
-  ctx.reply(`Choose one of the below options:`, getCategoryKeyboard());
-});
-
 // Handle the start button click
 bot.action("start_button", (ctx) => {
   ctx.deleteMessage().catch((e) => console.log("Could not delete message", e));
@@ -177,6 +172,11 @@ bot.command("random", (ctx) => {
 // Handle quit button
 bot.hears("❌ Quit", (ctx) => {
   ctx.reply("Are you sure you want to quit?", getQuitConfirmKeyboard());
+});
+
+// Bot handle text
+bot.on("text", (ctx) => {
+  ctx.reply(`Choose one of the below options`, getCategoryKeyboard());
 });
 
 const PORT = Number(process.env.PORT) || 8443;
