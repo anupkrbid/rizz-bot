@@ -175,14 +175,50 @@ bot.hears("❌ Quit", (ctx) => {
 });
 
 // Launch the bot
-bot
-  .launch()
-  .then(() => {
-    console.log("Ultimate Pickup Line Bot is running!");
-  })
-  .catch((err) => {
-    console.error("Error starting bot:", err);
-  });
+// const PORT = Number(process.env.PORT) || 3000;
+// const WEBHOOK_URL = process.env.WEBHOOK_URL;
+
+// if (WEBHOOK_URL) {
+//   bot.launch({
+//     webhook: {
+//       domain: WEBHOOK_URL,
+//       hookPath: '/webhook-path',
+//       port: PORT
+//     }
+//   })
+//   .then(() => {
+//     console.log("Webhook bot listening on port", PORT);
+//   })
+//   .catch((err) => {
+//     console.error("Error starting bot:", err);
+//   });
+// } else {
+//   bot.launch()
+//     .then(() => {
+//       console.log("Bot started in polling mode");
+//     })
+//     .catch((err) => {
+//       console.error("Error starting bot:", err);
+//     });
+// }
+
+const PORT = Number(process.env.PORT) || 3000;
+const WEBHOOK_URL = process.env.WEBHOOK_URL;
+
+bot.launch(
+  {
+    webhook: {
+      // Public domain for webhook; e.g.: example.com
+      domain: WEBHOOK_URL as string,
+
+      // Port to listen on; e.g.: 8080
+      port: PORT,
+    },
+  },
+  () => {
+    console.log(`Bot started in webhook mode at ${WEBHOOK_URL}`);
+  }
+);
 
 // Enable graceful stop
 process.once("SIGINT", () => bot.stop("SIGINT"));
