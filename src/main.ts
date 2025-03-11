@@ -25,6 +25,11 @@ bot.start((ctx) => {
   );
 });
 
+// Bot handle text
+bot.on("text", (ctx) => {
+  ctx.reply(`Choose one of the below options:`, getCategoryKeyboard());
+});
+
 // Handle the start button click
 bot.action("start_button", (ctx) => {
   ctx.deleteMessage().catch((e) => console.log("Could not delete message", e));
@@ -173,34 +178,6 @@ bot.command("random", (ctx) => {
 bot.hears("❌ Quit", (ctx) => {
   ctx.reply("Are you sure you want to quit?", getQuitConfirmKeyboard());
 });
-
-// Launch the bot
-// const PORT = Number(process.env.PORT) || 3000;
-// const WEBHOOK_URL = process.env.WEBHOOK_URL;
-
-// if (WEBHOOK_URL) {
-//   bot.launch({
-//     webhook: {
-//       domain: WEBHOOK_URL,
-//       hookPath: '/webhook-path',
-//       port: PORT
-//     }
-//   })
-//   .then(() => {
-//     console.log("Webhook bot listening on port", PORT);
-//   })
-//   .catch((err) => {
-//     console.error("Error starting bot:", err);
-//   });
-// } else {
-//   bot.launch()
-//     .then(() => {
-//       console.log("Bot started in polling mode");
-//     })
-//     .catch((err) => {
-//       console.error("Error starting bot:", err);
-//     });
-// }
 
 const PORT = Number(process.env.PORT) || 8443;
 const WEBHOOK_URL = process.env.WEBHOOK_URL;

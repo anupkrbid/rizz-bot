@@ -1,7 +1,7 @@
 {
   "name": "rizz-bot",
   "version": "1.0.0",
-  "description": "A telegram bot that acts as your wingman",
+  "description": "A pocket wingman inform of a telegram bot.",
   "main": "src/main.ts",
   "scripts": {
     "dev": "tsx watch src/main.ts",
