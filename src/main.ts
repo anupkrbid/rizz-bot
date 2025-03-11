@@ -202,7 +202,7 @@ bot.hears("❌ Quit", (ctx) => {
 //     });
 // }
 
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = Number(process.env.PORT) || 8443;
 const WEBHOOK_URL = process.env.WEBHOOK_URL;
 
 bot.launch(
